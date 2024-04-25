@@ -1,0 +1,57 @@
+# from robomaster import robot
+# import time 
+
+
+# def sub_data_handler(sub_info):
+#     global distance
+#     distance = sub_info[0]/10
+#     return distance 
+
+# def main():
+#     global distance
+#     global speed
+#     # speed =int( (k*distance)-target+e)
+#     speed = (k*distance)-target
+#     if -10<=speed<=-1:
+        
+#         speed -= 20
+#     if 35<=distance<=40:
+
+#         distance = 60
+#     ep_chassis.drive_wheels(w1=speed, w2=speed, w3=speed, w4=speed)
+     
+#     print('speed= ', speed, 'distance =', distance , 'target=', target)
+    
+
+# if __name__ == "__main__":
+#     ep_robot = robot.Robot()
+#     ep_robot.initialize(conn_type="ap")
+
+#     ep_sensor = ep_robot.sensor
+#     ep_sensor.sub_distance(freq=5, callback=sub_data_handler)
+#     time.sleep(3)
+#     ep_chassis = ep_robot.chassis
+
+#     k=2
+#     tof=105
+#     target=10
+#     e=2
+#     # ep_chassis.drive_wheels(w1=120, w2=120, w3=120, w4=120)
+
+#     # tof= sub_data_handler(sub_info)
+#     # print(tof)
+#     # speed=tof-target+e
+    
+
+    while True:       
+    #         ep_chassis.drive_wheels(w1=0, w2=0, w3=0, w4=0)  
+        main()
+            
+
+        
+    
+
+            
+
+    ep_sensor.unsub_distance()
+    ep_robot.close()
